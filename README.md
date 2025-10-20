@@ -1,5 +1,3 @@
-# TiFL 论文复现项目
-
 ## 项目概述
 
 本项目是对论文《TiFL: A Tier-based Federated Learning System (arXiv:2001.09249)》的完整复现实现。

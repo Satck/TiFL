@@ -80,6 +80,7 @@ def main():
     
     # 合并配置
     dataset_config = {**config['common'], **config['datasets'][args.dataset]}
+    dataset_config['dataset'] = args.dataset  # 添加数据集名称
     
     # 创建客户端
     clients, test_data, model = setup_clients(

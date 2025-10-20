@@ -2,7 +2,7 @@
 
 ## 项目概述
 
-这是对论文《TiFL: A Tier-based Federated Learning System (arXiv:2001.09249)》的完整复现实现。
+本项目是对论文《TiFL: A Tier-based Federated Learning System (arXiv:2001.09249)》的完整复现实现。
 
 ## 项目结构
 

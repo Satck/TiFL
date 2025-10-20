@@ -9,21 +9,16 @@
 ```
 tifl_project/
 ├── data/                    # 数据加载与Non-IID划分
-│   ├── __init__.py
 │   └── loader.py           # 数据集加载和Non-IID划分
 ├── models/                 # 模型定义
-│   ├── __init__.py
 │   └── networks.py         # CNN模型定义
 ├── core/                   # 核心组件
-│   ├── __init__.py
 │   ├── client.py           # 客户端实现
 │   ├── server.py           # 服务器端FedAvg聚合
 │   └── tiering.py          # 分层系统和自适应调度器
 ├── strategies/             # 选择策略
-│   ├── __init__.py
 │   └── selector.py         # 5种客户端选择策略
 ├── experiments/            # 实验执行
-│   ├── __init__.py
 │   └── trainer.py          # 主训练流程
 ├── results/                # 结果存储
 │   ├── metrics/           # 实验指标
@@ -122,6 +117,7 @@ common:
   num_clients: 25    # 从50减少到25
   num_rounds: 250    # 从500减少到250
 ```
-
+结果展示：
+![img.png](img.png)
 
 

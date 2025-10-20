@@ -1,0 +1,30 @@
+# TiFL实验配置
+common:
+  num_clients: 50
+  clients_per_round: 5
+  num_rounds: 500
+  local_epochs: 1
+  batch_size: 10
+  num_tiers: 5
+  seed: 42
+
+datasets:
+  mnist:
+    name: 'mnist'
+    cpu_alloc: [2.0, 1.0, 0.75, 0.5, 0.25]
+    optimizer: {type: 'RMSprop', lr: 0.01, decay: 0.995}
+    non_iid_shards: 2
+  
+  fashion_mnist:
+    name: 'fashion_mnist'
+    cpu_alloc: [2.0, 1.0, 0.75, 0.5, 0.25]
+    optimizer: {type: 'RMSprop', lr: 0.01, decay: 0.995}
+    non_iid_shards: 2
+  
+  cifar10:
+    name: 'cifar10'
+    cpu_alloc: [4.0, 2.0, 1.0, 0.5, 0.1]
+    optimizer: {type: 'RMSprop', lr: 0.01, decay: 0.995}
+    non_iid_classes: 5
+
+strategies: [vanilla, uniform, fast, slow, adaptive]

@@ -7,18 +7,19 @@ class TieringSystem:
     
     def profile_clients(self, clients, global_weights, sync_rounds=3):
         """性能分析：测量客户端延迟"""
-        latencies = {}
+        latencies = {} 
         for client in clients:
             times = []
-            for _ in range(sync_rounds):
-                _, t, _ = client.train(global_weights, epochs=1)
-                times.append(t)
-            latencies[client.client_id] = np.mean(times)
+            for _ in range(sync_rounds):  
+                _, t, _ = client.train(global_weights, epochs=1)    
+                ##这里只要部分返回值t，即可就是时间，其他的都不要  client.train 返回了部分参数
+                times.append(t) 
+            latencies[client.client_id] = np.mean(times)  ##计算平均值 通过计算平均值，可以得出该客户端在多轮训练中的平均延迟。
         return latencies
     
     def create_tiers(self, latencies):
         """根据延迟创建层级"""
-        sorted_clients = sorted(latencies.items(), key=lambda x: x[1])
+        sorted_clients = sorted(latencies.items(), key=lambda x: x[1])   ## atencies中的数据传 lambda 函数提取每组数据中的第一个元素然后进行排序
         clients_per_tier = len(sorted_clients) // self.num_tiers
         
         self.tiers = {}
